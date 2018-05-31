@@ -369,7 +369,7 @@ euro = euro.split("\n")
 
 euro = [l.split("\t") for l in euro]
 euro = [[l[0], float(l[1])] for l in euro]
-# print(euro)
+# print(euro)|
 
 
 pdbc = """29-05-17	100
@@ -639,6 +639,7 @@ for day in copy_euro:
 		euro.remove(day)
 
 
+
 returns_euro = [(euro[i+1][1] / euro[i][1]) - 1 for i in range(len(euro) - 1)]
 
 returns_pdbc = [(pdbc[i+1][1] / pdbc[i][1]) - 1 for i in range(len(pdbc) - 1)]
@@ -652,7 +653,7 @@ print("Expected:", expected)
 
 std_dev = (sum((exc - expected) ** 2 for exc in returns_exc) / (len(returns_exc)-1)) ** .5
 
-# STD_DEV DEBERÍA SER 0.108
+# STD_DEV DEBERÍA SER 0.108?
 print("STD_DEV:", std_dev)
 
 sharpe = expected / std_dev
